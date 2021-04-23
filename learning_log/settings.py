@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # Мои приложения
     'learning_logs',
     'users',
+
+    # Сторонние приложения
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
