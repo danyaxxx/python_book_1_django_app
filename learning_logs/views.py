@@ -42,7 +42,9 @@ def new_topic(request):
         # Оправлены данные POST; обработать данные.
         form = TopicForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
+            new_topic.save()
             return redirect('learning_logs:topics')
 
     # Вывести пустую или недействительную форму.
